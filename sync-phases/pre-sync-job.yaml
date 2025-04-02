@@ -12,5 +12,4 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-      restartPolicy: Never
-  backoffLimit: 0
+
