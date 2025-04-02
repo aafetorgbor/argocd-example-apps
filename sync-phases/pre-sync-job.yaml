@@ -5,10 +5,17 @@ metadata:
   annotations:
     argocd.argoproj.io/hook: PreSync
 spec:
+  selector:
+    matchLabels:
+      app: hook-app
+  replicas: 1
   template:
+    metadata:
+      labels:
+        app: hook-app
     spec:
       containers:
-      - name: sleep
+      - name: hook-app
         image: nginx:latest
         ports:
         - containerPort: 80
